@@ -1,5 +1,6 @@
 #!/bin/bash
-#gua ganteng njink
+#omaeva, shindeiru
+
 token(){
         GetToken=$(curl -s --compressed "https://cse.google.com/cse.js?cx=partner-pub-2698861478625135:3033704849" -L -D -)
         token=$(echo $GetToken | grep -Po "(?<=\"cse_token\": \")[^\"]*")
@@ -12,19 +13,21 @@ luruh(){
 mluruh(){
         token
         key="partner-pub-2698861478625135:3033704849"
-    luruh=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')
+    luruh=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')'
 }
-echo "Choise Your Number: "
+echo "=================="
 echo "1. Single Dorking"
 echo "2. Multi Dorking"
-read -p "[+]Root@LoliDocker:~# " choise;
+echo "=================="
 
-if [[ -z $choise ]]; then
+read -p "[+]Root@LoliDocker:~# " choice;
+
+if [[ -z $choice ]]; then
         printf "\nNo Input. Exit now\n"
         exit 1
 fi
 
-if [[ $choise -eq 1 ]]; then
+if [[ $choice -eq 1 ]]; then
         read -p "URL Only: (y/n)? " filter;
         read -p "Dork: " dork;
         dorke=''"$dork"''
@@ -48,7 +51,8 @@ if [[ $choise -eq 1 ]]; then
             fi
             ((num++))
         done
-elif [[ $choise -eq 2 ]]; then
+
+elif [[ $choice -eq 2 ]]; then
         read -p "URL Only: (y/n)? " filter;
         read -p "Dork Files: " dork_file;
         if [[ ! -f $dork_file ]]; then
