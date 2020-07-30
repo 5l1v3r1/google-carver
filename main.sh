@@ -20,7 +20,7 @@ echo "1. Single Dorking"
 echo "2. Multi Dorking"
 echo "=================="
 
-read -p "[+]Root@LoliDocker:~# " choice;
+read -p "[+]Root@GoogleCarver:~# " choice;
 
 if [[ -z $choice ]]; then
         printf "\nNo Input. Exit now\n"
@@ -37,7 +37,7 @@ if [[ $choice -eq 1 ]]; then
                 printf "\n====== Grabbing from Page $num ======\n"
                 luruh $eDork $pages
                 if [[ $luruh == '' ]]; then
-                printf "Not Links Found\n"
+                printf "No Links Found\n"
                 break;
             else
                 if [[ $filter == 'y' || $filter == 'Y' ]]; then
