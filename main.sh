@@ -89,4 +89,4 @@ fi
 printf "\n\n[!] Filtering Result... \n"
 time=$(date | sed 's/ /-/g')
 cat result.tmp | sort -u | uniq >> Result-${time}.txt
-printf "[+] All : $(cat Result-${time}.txt | wc -l) Sites\n"
+printf "[+] All : $(cat Result-${date --iso-8601=seconds}.txt | wc -l) Sites\n"
