@@ -5,15 +5,15 @@ token(){
         GetToken=$(curl -s --compressed "https://cse.google.com/cse.js?cx=partner-pub-2698861478625135:3033704849" -L -D -)
         token=$(echo $GetToken | grep -Po "(?<=\"cse_token\": \")[^\"]*")
 }
-luruh(){
+query1(){
         token
         key="partner-pub-2698861478625135:3033704849"
-    luruh=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')
+    query1=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')
 }
-mluruh(){
+query2(){
         token
         key="partner-pub-2698861478625135:3033704849"
-    luruh=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')'
+    query1=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')'
 }
 echo "=================="
 echo "1. Single Dorking"
@@ -35,18 +35,18 @@ if [[ $choice -eq 1 ]]; then
         num=1;
         for pages in {0..1000..10}; do
                 printf "\n====== Grabbing from Page $num ======\n"
-                luruh $eDork $pages
-                if [[ $luruh == '' ]]; then
+                query1 $eDork $pages
+                if [[ $query1 == '' ]]; then
                 printf "No Links Found\n"
                 break;
             else
                 if [[ $filter == 'y' || $filter == 'Y' ]]; then
-                        Url=$(echo $luruh | grep -Po 'http.?://([[:alnum:]_.-]+?\.){1,5}[[:alpha:].]{2,10}/')
+                        Url=$(echo $query1 | grep -Po 'http.?://([[:alnum:]_.-]+?\.){1,5}[[:alpha:].]{2,10}/')
                             echo ''"$Url"''
                             echo "$Url" >> result.tmp
                 else
-                            echo ''"$luruh"''
-                            echo "$luruh" >> result.tmp
+                            echo ''"$query1"''
+                            echo "$query1" >> result.tmp
                         fi
             fi
             ((num++))
@@ -66,18 +66,18 @@ elif [[ $choice -eq 2 ]]; then
                 num=1;
                 for pages in {0..1000..10}; do
                         printf "\n====== Grabbing from Page $num ======\n"
-                        mluruh $baka $pages
-                        if [[ $luruh == '' ]]; then
+                        query2 $baka $pages
+                        if [[ $query1 == '' ]]; then
                         printf "Not Links Found\n"
                         break;
                     else
                 if [[ $filter == 'y' || $filter == 'Y' ]]; then
-                        Url=$(echo $luruh | grep -Po 'http.?://([[:alnum:]_.-]+?\.){1,5}[[:alpha:].]{2,10}/')
+                        Url=$(echo $query1 | grep -Po 'http.?://([[:alnum:]_.-]+?\.){1,5}[[:alpha:].]{2,10}/')
                             echo ''"$Url"''
                             echo "$Url" >> result.tmp
                 else
-                            echo ''"$luruh"''
-                            echo "$luruh" >> result.tmp
+                            echo ''"$query1"''
+                            echo "$query1" >> result.tmp
                         fi
                     fi
                     ((num++))
