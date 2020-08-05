@@ -2,21 +2,22 @@
 
 WIP, it does basic dork searching but rate limiting counter mesasures is still being worked out to fit all the functionality in the same package.
 
-Example usage: 
-./main.sh
+Example usage:  
 
-==================  
-1. Single Dorking
-2. Multi Dorking  
-==================  
-[+]Root@GoogleCarver:~# 2
-URL Only: (y/n)? n
-Dork Files: dorks/bounty.txt
+    ./main.sh
 
-[=] Searching Dork: inurl /bug bounty
+    ==================  
+    1. Single Dorking
+    2. Multi Dorking  
+    ==================  
+    [+]Root@GoogleCarver:~# 2
+    URL Only: (y/n)? n
+    Dork Files: dorks/bounty.txt
 
-====== Grabbing from Page 1 ======
-https://www.alwaysdata.com/en/bug-bounty/
-https://www.traveloka.com/en-id/bugs
-https://www.bitpanda.com/en/legal/bugbounty
+    [=] Searching Dork: inurl /bug bounty
+
+    ====== Grabbing from Page 1 ======
+    https://www.alwaysdata.com/en/bug-bounty/
+    https://www.traveloka.com/en-id/bugs
+    https://www.bitpanda.com/en/legal/bugbounty
 (...)
