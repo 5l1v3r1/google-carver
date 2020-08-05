@@ -5,10 +5,10 @@ WIP, it does basic dork searching but rate limiting counter mesasures is still b
 Example usage: 
 ./main.sh
 
-==================
+==================  
 1. Single Dorking
-2. Multi Dorking
-==================
+2. Multi Dorking  
+==================  
 [+]Root@GoogleCarver:~# 2
 URL Only: (y/n)? n
 Dork Files: dorks/bounty.txt
