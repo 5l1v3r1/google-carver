@@ -2,9 +2,9 @@
 
 WIP, it does basic dork searching but rate limiting counter mesasures is still being worked out to fit all the functionality in the same package.
 
-Usage:
+Example usage: 
+./main.sh
 
-❯ bash main.sh
 ==================
 1. Single Dorking
 2. Multi Dorking
