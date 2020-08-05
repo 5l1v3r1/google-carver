@@ -1,5 +1,4 @@
-#!/bin/bash
-#omaeva, shindeiru
+#!/bin/sh
 
 token(){
         GetToken=$(curl -s --compressed "https://cse.google.com/cse.js?cx=partner-pub-2698861478625135:3033704849" -L -D -)
@@ -13,7 +12,7 @@ query1(){
 query2(){
         token
         key="partner-pub-2698861478625135:3033704849"
-    query1=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')'
+    query1=$(curl -s --compressed 'https://cse.google.com/cse/element/v1?num=10&hl=en&cx='''"${key}"'''&safe=off&cse_tok='''"${token}"'''&start='''"${2}"'''&q='''"${1}"'''&callback=x' -L -D - | grep -Po '(?<="unescapedUrl": ")[^"]*')
 }
 echo "=================="
 echo "1. Single Dorking"
@@ -88,5 +87,5 @@ else
 fi
 printf "\n\n[!] Filtering Result... \n"
 time=$(date | sed 's/ /-/g')
-cat result.tmp | sort -u | uniq >> Result-${time}.txt
-printf "[+] All : $(cat Result-${time}.txt | wc -l) Sites\n"
+cat result.tmp | sort -u | uniq >> Result-$(date --iso-8601=seconds).txt
+printf "[+] All : $(cat Result-$(date --iso-8601=seconds).txt | wc -l) Sites\n"
