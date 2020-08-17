@@ -1,5 +1,4 @@
-#!/bin/bash
-#omaeva, shindeiru
+#!/bin/sh
 
 token(){
         GetToken=$(curl -s --compressed "https://cse.google.com/cse.js?cx=partner-pub-2698861478625135:3033704849" -L -D -)
