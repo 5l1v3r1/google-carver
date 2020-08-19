@@ -1,0 +1,6 @@
+README.md
+bashfuscator.egg-info/PKG-INFO
+bashfuscator.egg-info/SOURCES.txt
+bashfuscator.egg-info/dependency_links.txt
+bashfuscator.egg-info/requires.txt
+bashfuscator.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: bashfuscator
+Version: 0.0.1
+Summary: Configurable and extendable Bash obfuscation framework
+Home-page: UNKNOWN
+Author: Andrew LeFevre
+License: MIT
+Description: # google-carver
+Platform: UNKNOWN
+Provides-Extra: dev

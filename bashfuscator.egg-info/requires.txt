@@ -1,0 +1,5 @@
+argcomplete
+pyperclip
+
+[dev]
+pytest
