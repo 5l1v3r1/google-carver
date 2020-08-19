@@ -19,7 +19,7 @@ echo "1. Single Dorking"
 echo "2. Multi Dorking"
 echo "=================="
 
-read - "[+]Root@GoogleCarver:~# " choice;
+read -p "[+]Root@GoogleCarver:~# " choice;
 
 if [[ -z $choice ]]; then
         printf "\nNo Input. Exit now\n"
