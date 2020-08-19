@@ -19,7 +19,7 @@ echo "1. Single Dorking"
 echo "2. Multi Dorking"
 echo "=================="
 
-read -r "[+]Root@GoogleCarver:~# " choice;
+read - "[+]Root@GoogleCarver:~# " choice;
 
 if [[ -z $choice ]]; then
         printf "\nNo Input. Exit now\n"
@@ -27,8 +27,8 @@ if [[ -z $choice ]]; then
 fi
 
 if [[ $choice -eq 1 ]]; then
-        read -r "URL Only: (y/n)? " filter;
-        read -r "Dork: " dork;
+        read -p "URL Only: (y/n)? " filter;
+        read -p "Dork: " dork;
         dorke=''"$dork"''
         eDork=$(echo $dork | sed -f urlencode)
         num=1;
@@ -52,8 +52,8 @@ if [[ $choice -eq 1 ]]; then
         done
 
 elif [[ $choice -eq 2 ]]; then
-        read -r "URL Only: (y/n)? " filter;
-        read -r "Dork Files: " dork_file;
+        read -p "URL Only: (y/n)? " filter;
+        read -p "Dork Files: " dork_file;
         if [[ ! -f $dork_file ]]; then
                 echo "[404] File $dork_file or not found. Please check your dork file name."
                 exit 1;
