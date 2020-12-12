@@ -1,3 +1,5 @@
+![](https://api.kindspeech.org/v1/badge)
+
 # google-carver
 
 WIP, it does basic dork searching but rate limiting counter mesasures is still being worked out to fit all the functionality in the same package.
